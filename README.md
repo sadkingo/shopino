@@ -1,0 +1,2 @@
+# shopino
+FullStack shopping solution
