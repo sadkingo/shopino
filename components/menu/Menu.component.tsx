@@ -14,29 +14,27 @@ import { NAVBAR_HIGHT } from "../nav-bar/NavBar.config";
 
 const Menu = ({ title, items, style, childrenStyle, children }: MenuProps) => {
   return (
-    <Box position={"relative"} w={NAVBAR_HIGHT} h={NAVBAR_HIGHT}>
-      <Box position={"absolute"} translate="auto">
-        <MenuRoot>
-          <MenuTrigger asChild>
-            <Button size="sm" style={style} variant="outline">
-              {title}
-              {children}
-            </Button>
-          </MenuTrigger>
-          <MenuContent>
-            {items.map((menu) => (
-              <MenuItem
-                key={menu.id}
-                style={childrenStyle}
-                asChild
-                value={menu.title}
-              >
-                <Link href={menu.url}>{menu.title}</Link>
-              </MenuItem>
-            ))}
-          </MenuContent>
-        </MenuRoot>
-      </Box>
+    <Box w={NAVBAR_HIGHT} h={NAVBAR_HIGHT}>
+      <MenuRoot>
+        <MenuTrigger asChild>
+          <Button size="sm" style={style} variant="outline">
+            {title}
+            {children}
+          </Button>
+        </MenuTrigger>
+        <MenuContent>
+          {items.map((menu) => (
+            <MenuItem
+              key={menu.id}
+              style={childrenStyle}
+              asChild
+              value={menu.title}
+            >
+              <Link href={menu.url}>{menu.title}</Link>
+            </MenuItem>
+          ))}
+        </MenuContent>
+      </MenuRoot>
     </Box>
   );
 };

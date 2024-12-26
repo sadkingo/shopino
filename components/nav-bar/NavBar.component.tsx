@@ -13,12 +13,14 @@ function NavBarComponent() {
   return (
     <>
       <HStack
-        bg="Background"
-        w="full"
-        h={NAVBAR_HIGHT + 4}
-        px="15%"
-        py={2}
         position="fixed"
+        h={NAVBAR_HIGHT + 4}
+        w="full"
+        px="5%"
+        lg={{ px: "15%" }}
+        py={2}
+        justifyContent="space-between"
+        bg="Background"
       >
         <HStack position="relative" gap={8} h="full" w="full">
           <Link href="/" className="flex gap-2 h-full">
