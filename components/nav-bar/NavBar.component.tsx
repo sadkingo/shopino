@@ -1,13 +1,31 @@
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 
-import { Box, Button, HStack, Input } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Circle,
+  Float,
+  HStack,
+  Input,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import { LuSearch } from "react-icons/lu";
 import { InputGroup } from "@ui/input-group";
 import Menu from "@components/menu";
 
 import { NAVBAR_HIGHT, ProfileMenuItems } from "./NavBar.config";
-import { ColorModeButton } from "../ui/color-mode";
+import { ColorModeButton } from "@ui/color-mode";
+import {
+  DrawerBackdrop,
+  DrawerBody,
+  DrawerCloseTrigger,
+  DrawerContent,
+  DrawerRoot,
+  DrawerTrigger,
+} from "@ui/drawer";
+import colors from "@/config/colors";
 
 function NavBarComponent() {
   return (
@@ -22,21 +40,30 @@ function NavBarComponent() {
         justifyContent="space-between"
         bg="Background"
       >
-        <HStack position="relative" gap={8} h="full" w="full">
-          <Link href="/" className="flex gap-2 h-full">
-            <Box h="full" w="fit">
-              <Icon
-                className={`h-full w-fit`}
-                icon="fluent-mdl2:shopping-cart-solid"
-              />
-            </Box>
-            <Box>{process.env.WEBSITE_NAME}</Box>
-          </Link>
-          <InputGroup
+        {renderDesktopMenu()}
+        {renderMobileMenu()}
+        <ColorModeButton ms="10" />
+      </HStack>
+      {/* placeholder for nav-bar */}
+      <Box h={NAVBAR_HIGHT + 4}></Box>
+    </>
+  );
+
+  function renderDesktopMenu() {
+    return (
+      <HStack
+        mdDown={{ display: "none" }}
+        position="relative"
+        gap={8}
+        h="full"
+        w="full"
+      >
+        {renderLogoLink()}
+        <InputGroup
           minW="fit"
           w="full"
           color="white"
-          bg={{ _light: colors.sky, _dark: colors.sky }}
+          bg={{ _light: colors.mediumLight, _dark: colors.medium }}
           startElement={<LuSearch color="white" />}
         >
           <Input
@@ -44,33 +71,92 @@ function NavBarComponent() {
             _placeholder={{ color: "white" }}
             placeholder="Search products"
           />
-          </InputGroup>
-          <HStack>
-            <Button p="2">
-              <Icon className="w-full h-full" icon="fluent:alert-48-filled" />
-            </Button>
-            <Button p="2">
-              <Icon
-                className="w-full h-full"
-                icon="material-symbols:favorite"
-              />
-            </Button>
-            <Button p="2">
-              <Icon className="w-full h-full" icon="ic:outline-share" />
-            </Button>
-            <Button p="2">
-              <Icon className="w-full h-full" icon="iconoir:cart" />
-            </Button>
-            <Menu items={ProfileMenuItems}>
-              <Icon className="w-full h-full" icon="mdi:user" />
-            </Menu>
-          </HStack>
+        </InputGroup>
+        <HStack>
+          <Button p="2">
+            <Icon className="w-full h-full" icon="fluent:alert-48-filled" />
+          </Button>
+          <Button p="2">
+            <Icon className="w-full h-full" icon="material-symbols:favorite" />
+          </Button>
+          <Button p="2">
+            <Icon className="w-full h-full" icon="ic:outline-share" />
+          </Button>
+          <Button p="2">
+            <Icon className="w-full h-full" icon="iconoir:cart" />
+            <Float offset="2">
+              <Circle size="5" bg="red" color="white">
+                <Text fontSize="12px">0</Text>
+              </Circle>
+            </Float>
+          </Button>
+          <Menu items={ProfileMenuItems}>
+            <Icon className="w-full h-full" icon="mdi:user" />
+          </Menu>
         </HStack>
-        <ColorModeButton />
       </HStack>
-      <Box h={NAVBAR_HIGHT + 4}></Box>
-    </>
-  );
+    );
+  }
+  function renderLogoLink() {
+    return (
+      <Link
+        href="/"
+        className="flex justify-center items-center min-h-8 gap-2 h-full"
+      >
+        <Box h="full" w="max-content">
+          <Icon
+            className={`h-full w-fit`}
+            icon="fluent-mdl2:shopping-cart-solid"
+          />
+        </Box>
+        <Box>{process.env.WEBSITE_NAME}</Box>
+      </Link>
+    );
+  }
+  function renderMobileMenu() {
+    return (
+      <HStack wrap="wrap" md={{ display: "none" }}>
+        <DrawerRoot size="full" placement="start">
+          <DrawerBackdrop />
+          <DrawerTrigger asChild>
+            <Button variant="outline" size="sm">
+              <Icon className="w-full h-fit" icon="stash:burger-classic" />
+            </Button>
+          </DrawerTrigger>
+          <DrawerContent md={{ display: "none" }}>
+            <DrawerBody px="0" pt="0" bg={{ _light: colors.mediumLight }}>
+              <VStack w="full" h="fit" gap="0">
+                <Box bg={{ _light: "white" }} w="full" h="12">
+                  {renderLogoLink()}
+                </Box>
+                {mobileMenuButton("Home", "/")}
+                {mobileMenuButton("Profile", "/")}
+                {mobileMenuButton("Cart", "/")}
+                {mobileMenuButton("Products", "/")}
+                {mobileMenuButton("About us", "/")}
+                {mobileMenuButton("Contact us", "/")}
+              </VStack>
+            </DrawerBody>
+            <DrawerCloseTrigger />
+          </DrawerContent>
+        </DrawerRoot>
+      </HStack>
+    );
+    function mobileMenuButton(text: string, href: string) {
+      return (
+        <Link href={href} className="w-full">
+          <Button
+            w="full"
+            bg={colors.medium}
+            color="white"
+            opacity={{ _hover: "80%" }}
+          >
+            {text}
+          </Button>
+        </Link>
+      );
+    }
+  }
 }
 
 export default NavBarComponent;
