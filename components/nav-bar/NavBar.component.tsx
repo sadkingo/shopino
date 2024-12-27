@@ -26,19 +26,24 @@ function NavBarComponent() {
           <Link href="/" className="flex gap-2 h-full">
             <Box h="full" w="fit">
               <Icon
-                className={`h-${NAVBAR_HIGHT} w-${NAVBAR_HIGHT}`}
+                className={`h-full w-fit`}
                 icon="fluent-mdl2:shopping-cart-solid"
               />
             </Box>
             <Box>{process.env.WEBSITE_NAME}</Box>
           </Link>
           <InputGroup
-            minW="fit"
-            w="full"
-            bg="gray.800"
-            startElement={<LuSearch />}
-          >
-            <Input placeholder="Search products" />
+          minW="fit"
+          w="full"
+          color="white"
+          bg={{ _light: colors.sky, _dark: colors.sky }}
+          startElement={<LuSearch color="white" />}
+        >
+          <Input
+            outlineColor={{ base: colors.light, _dark: colors.dark }}
+            _placeholder={{ color: "white" }}
+            placeholder="Search products"
+          />
           </InputGroup>
           <HStack>
             <Button p="2">
