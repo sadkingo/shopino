@@ -109,7 +109,7 @@ function NavBarComponent() {
             icon="fluent-mdl2:shopping-cart-solid"
           />
         </Box>
-        <Box>{process.env.WEBSITE_NAME}</Box>
+        <Text fontWeight="bolder">{process.env.WEBSITE_NAME}</Text>
       </Link>
     );
   }
