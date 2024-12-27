@@ -4,7 +4,7 @@ import colors from "./colors";
 const themeConfig = defineConfig({
   globalCss: {
     html: {
-      colorPalette: colors.main,
+      colorPalette: colors.mediumDark,
     },
   },
   theme: {
@@ -13,18 +13,18 @@ const themeConfig = defineConfig({
         fg: {
           DEFAULT: {
             value: {
-              base: colors.main,
-              _dark: colors.sky,
-              _light: colors.sky,
+              base: colors.mediumDark,
+              _dark: colors.mediumLight,
+              _light: colors.mediumLight,
             },
           },
         },
         bg: {
           DEFAULT: {
             value: {
-              base: colors.main,
-              _dark: colors.sky,
-              _light: colors.sky,
+              base: colors.mediumDark,
+              _dark: colors.medium,
+              _light: colors.mediumLight,
             },
           },
         },
