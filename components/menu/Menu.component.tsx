@@ -10,11 +10,10 @@ import {
 
 import { MenuProps } from "./Menu";
 import Link from "next/link";
-import { NAVBAR_HIGHT } from "../nav-bar/NavBar.config";
 
 const Menu = ({ title, items, style, childrenStyle, children }: MenuProps) => {
   return (
-    <Box w={NAVBAR_HIGHT} h={NAVBAR_HIGHT}>
+    <Box w="fit" h="fit" zIndex={1}>
       <MenuRoot>
         <MenuTrigger asChild>
           <Button size="sm" style={style} variant="outline">
@@ -22,7 +21,7 @@ const Menu = ({ title, items, style, childrenStyle, children }: MenuProps) => {
             {children}
           </Button>
         </MenuTrigger>
-        <MenuContent>
+        <MenuContent pos="absolute">
           {items.map((menu) => (
             <MenuItem
               key={menu.id}
@@ -30,7 +29,7 @@ const Menu = ({ title, items, style, childrenStyle, children }: MenuProps) => {
               asChild
               value={menu.title}
             >
-              <Link href={menu.url}>{menu.title}</Link>
+              <Link href={menu.url}>{menu.content || menu.title}</Link>
             </MenuItem>
           ))}
         </MenuContent>
