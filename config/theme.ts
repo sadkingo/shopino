@@ -10,15 +10,6 @@ const themeConfig = defineConfig({
   theme: {
     semanticTokens: {
       colors: {
-        fg: {
-          DEFAULT: {
-            value: {
-              base: colors.mediumDark,
-              _dark: colors.mediumLight,
-              _light: colors.mediumLight,
-            },
-          },
-        },
         bg: {
           DEFAULT: {
             value: {
