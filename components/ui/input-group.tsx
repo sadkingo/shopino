@@ -1,15 +1,19 @@
-import type { BoxProps, InputElementProps } from "@chakra-ui/react"
-import { Group, InputElement } from "@chakra-ui/react"
-import * as React from "react"
+import * as React from "react";
+import {
+  Group,
+  InputElement,
+  BoxProps,
+  InputElementProps,
+} from "@chakra-ui/react";
 
 export interface InputGroupProps extends BoxProps {
-  startElementProps?: InputElementProps
-  endElementProps?: InputElementProps
-  startElement?: React.ReactNode
-  endElement?: React.ReactNode
-  children: React.ReactElement
-  startOffset?: InputElementProps["paddingStart"]
-  endOffset?: InputElementProps["paddingEnd"]
+  startElementProps?: InputElementProps;
+  endElementProps?: InputElementProps;
+  startElement?: React.ReactNode;
+  endElement?: React.ReactNode;
+  children: React.ReactElement;
+  startOffset?: InputElementProps["paddingStart"];
+  endOffset?: InputElementProps["paddingEnd"];
 }
 
 export const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
@@ -23,10 +27,12 @@ export const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
       startOffset = "6px",
       endOffset = "6px",
       ...rest
-    } = props
+    } = props;
 
-    const child =
-      React.Children.only<React.ReactElement<InputElementProps>>(children)
+    // Ensure that `children` is a single ReactElement with `InputElementProps` type
+    const child = React.Children.only(
+      children,
+    ) as React.ReactElement<InputElementProps>;
 
     return (
       <Group ref={ref} {...rest}>
@@ -40,7 +46,7 @@ export const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
             ps: `calc(var(--input-height) - ${startOffset})`,
           }),
           ...(endElement && { pe: `calc(var(--input-height) - ${endOffset})` }),
-          ...children.props,
+          ...child.props,
         })}
         {endElement && (
           <InputElement placement="end" {...endElementProps}>
@@ -48,6 +54,6 @@ export const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
           </InputElement>
         )}
       </Group>
-    )
+    );
   },
-)
+);
