@@ -29,35 +29,24 @@ import colors from "@/config/colors";
 
 function NavBarComponent() {
   return (
-    <>
-      <HStack
-        position="fixed"
-        h={NAVBAR_HIGHT + 4}
-        w="full"
-        px="5%"
-        lg={{ px: "15%" }}
-        py={2}
-        justifyContent="space-between"
-        bg="Background"
-      >
-        {renderDesktopMenu()}
-        {renderMobileMenu()}
-        <ColorModeButton ms="10" />
-      </HStack>
-      {/* placeholder for nav-bar */}
-      <Box h={NAVBAR_HIGHT + 4}></Box>
-    </>
+    <HStack
+      h={NAVBAR_HIGHT + 4}
+      w="full"
+      px="5%"
+      lg={{ px: "15%" }}
+      py={2}
+      justifyContent="space-between"
+      bg="Background"
+    >
+      {renderDesktopMenu()}
+      {renderMobileMenu()}
+      <ColorModeButton ms="10" />
+    </HStack>
   );
 
   function renderDesktopMenu() {
     return (
-      <HStack
-        mdDown={{ display: "none" }}
-        position="relative"
-        gap={8}
-        h="full"
-        w="full"
-      >
+      <HStack mdDown={{ display: "none" }} gap={8} h="full" w="full">
         {renderLogoLink()}
         <InputGroup
           minW="fit"
@@ -147,6 +136,7 @@ function NavBarComponent() {
         <Link href={href} className="w-full">
           <Button
             w="full"
+            borderRadius="none"
             bg={colors.medium}
             color="white"
             opacity={{ _hover: "80%" }}
