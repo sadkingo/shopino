@@ -7,3 +7,14 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: white;
+  background: lightsteelblue;
+}
+
+::selection {
+  color: white;
+  background: lightsteelblue;
+}
