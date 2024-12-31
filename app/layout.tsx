@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./globals.css";
+
 import { Provider } from "@/components/ui/provider";
 import Header from "@/components/header";
 
@@ -18,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.className} flex flex-col antialiased`}>
         <Provider>
           <Header />
           {children}
