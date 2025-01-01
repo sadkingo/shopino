@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <>
       <ContactStrap />
-      <Box pos="sticky" top={0}>
+      <Box pos="sticky" zIndex={1} top={0}>
         <NavBar />
         <BottomNav />
       </Box>
