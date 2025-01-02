@@ -1,0 +1,3 @@
+interface CarouselItemProps {
+  image: staticImageData;
+}
