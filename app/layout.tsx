@@ -3,8 +3,10 @@ import { Inter } from "next/font/google";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./globals.css";
 
+import Background from "@images/background.jpg"
 import { Provider } from "@/components/ui/provider";
 import Header from "@/components/header";
+import { Box } from "@chakra-ui/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,10 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} flex flex-col antialiased`}>
+      <body className={`${inter.className} flex flex-col antialiased`} style={{ background: `url(${Background.src})` }}>
         <Provider>
           <Header />
-          {children}
+          <Box as="main" className="max-w-screen-2xl m-auto" bg={{ _light: "whiteAlpha.950", _dark: "blackAlpha.950" }} flex={1} >
+            {children}
+          </Box>
         </Provider>
       </body>
     </html>
