@@ -37,6 +37,7 @@ function NavBarComponent() {
       py={2}
       justifyContent="space-between"
       bg="Background"
+      color="fg"
     >
       {renderDesktopMenu()}
       {renderMobileMenu()}
@@ -51,28 +52,28 @@ function NavBarComponent() {
         <InputGroup
           minW="fit"
           w="full"
-          color="white"
+          color="fg"
           bg={{ _light: colors.mediumLight, _dark: colors.medium }}
-          startElement={<LuSearch color="white" />}
+          startElement={<LuSearch color="fg" />}
         >
           <Input
             outlineColor={{ base: colors.light, _dark: colors.dark }}
-            _placeholder={{ color: "white" }}
+            _placeholder={{ color: "fg" }}
             placeholder="Search products"
           />
         </InputGroup>
         <HStack>
           <Button p="2">
-            <Icon className="w-full h-full" icon="fluent:alert-48-filled" />
+            <Icon className="h-full w-full" icon="fluent:alert-48-filled" />
           </Button>
           <Button p="2">
-            <Icon className="w-full h-full" icon="material-symbols:favorite" />
+            <Icon className="h-full w-full" icon="material-symbols:favorite" />
           </Button>
           <Button p="2">
-            <Icon className="w-full h-full" icon="ic:outline-share" />
+            <Icon className="h-full w-full" icon="ic:outline-share" />
           </Button>
           <Button p="2">
-            <Icon className="w-full h-full" icon="iconoir:cart" />
+            <Icon className="h-full w-full" icon="iconoir:cart" />
             <Float offset="2">
               <Circle size="5" bg="red" color="white">
                 <Text fontSize="12px">0</Text>
@@ -80,7 +81,7 @@ function NavBarComponent() {
             </Float>
           </Button>
           <Menu items={ProfileMenuItems}>
-            <Icon className="w-full h-full" icon="mdi:user" />
+            <Icon className="h-full w-full" icon="mdi:user" />
           </Menu>
         </HStack>
       </HStack>
@@ -90,7 +91,7 @@ function NavBarComponent() {
     return (
       <Link
         href="/"
-        className="flex justify-center items-center min-h-8 gap-2 h-full"
+        className="flex h-full items-center justify-center gap-2 min-h-8"
       >
         <Box h="full" w="max-content">
           <Icon
@@ -109,7 +110,7 @@ function NavBarComponent() {
           <DrawerBackdrop />
           <DrawerTrigger asChild>
             <Button variant="outline" size="sm">
-              <Icon className="w-full h-fit" icon="stash:burger-classic" />
+              <Icon className="h-fit w-full" icon="stash:burger-classic" />
             </Button>
           </DrawerTrigger>
           <DrawerContent md={{ display: "none" }}>
