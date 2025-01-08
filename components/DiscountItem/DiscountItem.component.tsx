@@ -1,7 +1,7 @@
 import {FC} from 'react';
 import Image from "next/image";
-import Apple from "@images/apple.png"
-import {Flex} from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
+import { colors } from "@/config/theme";
 import { DiscountItemProps } from "@components/DiscountItem/DiscountItem";
 
 
