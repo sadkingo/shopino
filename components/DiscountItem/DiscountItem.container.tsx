@@ -1,9 +1,10 @@
-import {FC} from 'react';
+import { FC } from 'react';
 import DiscountItem from "./DiscountItem.component";
+import { DiscountItemProps } from "@components/DiscountItem/DiscountItem";
 
-const DiscountItemContainer: FC = () => {
+const DiscountItemContainer: FC<DiscountItemProps> = ({image, ...restProps}) => {
     return (
-        <DiscountItem/>
+        <DiscountItem image={image} {...restProps}/>
     )
 }
 

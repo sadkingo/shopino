@@ -19,7 +19,7 @@ const DiscountCard: FC<DiscountCardProps> = ({children , ...restProps }) => {
             >
                 Latest Super Discount Active Coupon Code
             </Text>
-            <VStack>
+            <VStack w="full">
             {children}
             </VStack>
         </VStack>
