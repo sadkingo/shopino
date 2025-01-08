@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={`${inter.className} flex flex-col antialiased`} style={{ background: `url(${Background.src})` }}>
         <Provider>
           <Header />
-          <Box as="main" className="max-w-screen-2xl m-auto" bg={{ _light: "whiteAlpha.950", _dark: "blackAlpha.950" }} flex={1} >
+          <Box as="main" className="m-auto max-w-screen-2xl" bg={{ _light: "whiteAlpha.950", _dark: "blackAlpha.950" }} flex={1} >
             {children}
           </Box>
         </Provider>
