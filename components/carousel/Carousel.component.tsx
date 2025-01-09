@@ -5,10 +5,10 @@ import { CarouselProps } from './Carousel';
 import colors from '@/config/colors';
 import { indicatorStyles } from './Carousel.config';
 
-const Carousel: FC<CarouselProps> = ({ children }) => {
+const Carousel: FC<CarouselProps> = ({children}) => {
     return (
         <CarouselComponent
-            className="m-2 min-w-[400px] max-w-[800px]"
+            className="flex-1"
             autoPlay
             interval={3000}
             transitionTime={1000}
@@ -27,12 +27,12 @@ const Carousel: FC<CarouselProps> = ({ children }) => {
         onClickHandler: (e: React.MouseEvent | React.KeyboardEvent) => void,
         isSelected: boolean,
         index: number,
-        label: string
+        label: string,
     ) {
         if (isSelected) {
             return (
                 <li
-                    style={{ ...indicatorStyles, background: colors.medium }}
+                    style={{...indicatorStyles, background: colors.medium}}
                     aria-label={`Selected: ${label} ${index + 1}`}
                     title={`Selected: ${label} ${index + 1}`}
                 />
