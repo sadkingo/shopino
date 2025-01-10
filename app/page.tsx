@@ -27,15 +27,59 @@ export default function Home() {
     </Grid>
   );
 
-  function renderMainCarousel() {
-    return (
-      <HStack h="fit">
-        <Carousel>
-          {[fruit1, fruit2, fruit3].map((src, index) => (
-            <CarouselItem key={index} image={src} />
-          ))}
-        </Carousel>
-      </HStack>
-    )
-  }
+    function renderMainCarousel() {
+        return (
+            <Flex
+                w="fit"
+                h="fit"
+                justifyContent={"center"}
+            >
+                <Carousel>
+                    {[fruit1, fruit2, fruit3].map((src, index) => (
+                        <CarouselItem key={index} image={src}/>
+                    ))}
+                </Carousel>
+            </Flex>
+        );
+    }
+
+    function renderCouponCard() {
+        return <DiscountCard
+            maxH="400px"
+            overflow="hidden"
+            borderWidth={2}
+            borderColor={colors.light}
+            alignItems="start"
+            overflowY="auto"
+        >
+            <DiscountItem
+                coupon="COUPON_HERE"
+                date={date}
+                image={apple}
+                w="full"
+                borderBottom={`${colors.light} solid 1px`}
+            />
+            <DiscountItem
+                coupon="COUPON_HERE"
+                date={date}
+                image={apple}
+                w="full"
+                borderBottom={`${colors.light} solid 1px`}
+            />
+            <DiscountItem
+                coupon="COUPON_HERE"
+                date={date}
+                image={apple}
+                w="full"
+                borderBottom={`${colors.light} solid 1px`}
+            />
+            <DiscountItem
+                coupon="COUPON_HERE"
+                date={date}
+                image={apple}
+                w="full"
+                borderBottom={`${colors.light} solid 1px`}
+            />
+        </DiscountCard>;
+    }
 }
