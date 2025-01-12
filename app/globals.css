@@ -7,6 +7,14 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    background: url("../public/images/background.png") repeat white;
+}
+
+.dark body {
+    background: url("../public/images/background.png") repeat black;
+}
+
 /* scroll bar */
 ::-webkit-scrollbar {
     width: 10px;
