@@ -4,12 +4,12 @@ import { Text, VStack } from '@chakra-ui/react'
 import { DiscountCardProps } from './DiscountCard'
 import colors from '@/config/colors'
 
-const DiscountCard: FC<DiscountCardProps> = ({children , ...restProps }) => {
+const DiscountCard: FC<DiscountCardProps> = ({children, ...restProps}) => {
     return (
         <VStack
             gap={0}
             h="full"
-            {...restProps}
+            w="full"
         >
             <Text
                 w="full"
@@ -19,8 +19,8 @@ const DiscountCard: FC<DiscountCardProps> = ({children , ...restProps }) => {
             >
                 Latest Super Discount Active Coupon Code
             </Text>
-            <VStack w="full">
-            {children}
+            <VStack w="full" flex={1} {...restProps}>
+                {children}
             </VStack>
         </VStack>
     )
