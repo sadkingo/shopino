@@ -1,9 +1,10 @@
 "use client";
-import { Grid, HStack } from "@chakra-ui/react";
+import { Flex, Grid, GridItem } from "@chakra-ui/react";
 
 import fruit1 from "@/public/images/fruit-1.png";
 import fruit2 from "@/public/images/fruit-2.png";
 import fruit3 from "@/public/images/fruit-3.png";
+import apple from "@/public/images/apple.png";
 
 import CarouselItem from "@/components/carousel-item";
 import Carousel from "@/components/carousel";
@@ -12,20 +13,27 @@ import colors from "@/config/colors";
 import DiscountItem from "@components/DiscountItem";
 
 export default function Home() {
-  return (
-    <Grid
-      gridTemplateColumns={{ base: "repeat(2, minmax(0, 1fr))", mdDown: "minmax(0, 1fr)" }}
-      h="fit"
-      flexDir={{ lgDown: "column" }}
-      flex={1}
-      p={4}
-    >
-      {renderMainCarousel()}
-      <DiscountCard borderWidth={2} borderColor={colors.light} >
-        <DiscountItem/>
-      </DiscountCard>
-    </Grid>
-  );
+    const date = new Date(2026, 2, 15, 3, 4, 5);
+
+    return (
+        <Grid
+            gridTemplateColumns="repeat(12, minmax(0, 1fr))"
+            lgDown={{gridTemplateColumns: "1fr"}}
+            flexDir={{lgDown: "column"}}
+            h="fit"
+            w="fit"
+            p={4}
+            flex={1}
+            gapY={8}
+        >
+            <GridItem display="flex" alignItems="center" colSpan={7}>
+                {renderMainCarousel()}
+            </GridItem>
+            <GridItem colSpan={5}>
+                {renderCouponCard()}
+            </GridItem>
+        </Grid>
+    );
 
     function renderMainCarousel() {
         return (
