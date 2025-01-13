@@ -15,25 +15,49 @@ import DiscountItem from "@components/DiscountItem";
 export default function Home() {
     const date = new Date(2026, 2, 15, 3, 4, 5);
 
-    return (
-        <Grid
-            gridTemplateColumns="repeat(12, minmax(0, 1fr))"
-            lgDown={{gridTemplateColumns: "1fr"}}
-            flexDir={{lgDown: "column"}}
-            h="fit"
-            w="fit"
-            p={4}
-            flex={1}
-            gapY={8}
+  return (
+    <Grid
+      gridTemplateColumns="repeat(12, minmax(0, 1fr))"
+      flexDir={{ lgDown: "column" }}
+      h="fit"
+      w="fit"
+      p={4}
+      flex={1}
+      gapY={8}
+    >
+      <GridItem display="flex" alignItems="center" colSpan={{ base: 7, lgDown: 12 }}>
+        {renderMainCarousel()}
+      </GridItem>
+      <GridItem colSpan={{ base: 5, lgDown: 12 }}>
+        {renderCouponCard()}
+      </GridItem>
+      <GridItem colSpan={12}>
+        <Alert
+          icon={<></>}
+          status="info"
+          variant="subtle"
         >
-            <GridItem display="flex" alignItems="center" colSpan={7}>
-                {renderMainCarousel()}
-            </GridItem>
-            <GridItem colSpan={5}>
-                {renderCouponCard()}
-            </GridItem>
-        </Grid>
-    );
+          <VStack
+            gap={4}
+          >
+            <Flex
+              fontSize="2xl"
+              color={themedColors.light}
+            >
+              100% Natural Quality Organic Product
+            </Flex>
+            <Text
+              fontSize="xl"
+              gap={2}
+            >
+              See Our latest discounted products from here and get a special
+              <Link m={2} color={themedColors.medium} href="#Products">discount product</Link>
+            </Text>
+          </VStack>
+        </Alert>
+      </GridItem>
+    </Grid>
+  );
 
     function renderMainCarousel() {
         return (
