@@ -1,6 +1,12 @@
 import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
 import colors from "./colors";
 
+const themedColors = {
+  light: { _light: colors.light, _dark: colors.mediumLight },
+  medium: { _light: colors.mediumLight, _dark: colors.medium },
+  dark: { _light: colors.mediumDark, _dark: colors.dark },
+}
+
 const themeConfig = defineConfig({
   globalCss: {
     html: {
@@ -25,4 +31,4 @@ const themeConfig = defineConfig({
 });
 
 const themeSystem = createSystem(defaultConfig, themeConfig);
-export { themeConfig, themeSystem, colors };
+export { themeConfig, themeSystem, colors, themedColors };
