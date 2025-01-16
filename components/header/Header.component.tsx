@@ -1,16 +1,16 @@
 import React from "react";
 import NavBar from "../nav-bar";
-import BottomNav from "../bottom-nav";
+import BottomNav from "../nav-links";
 import ContactStrap from "../contact-strap";
 import { Box } from "@chakra-ui/react";
 
 const Header = () => {
   return (
     <>
-      <ContactStrap />
+      <ContactStrap/>
       <Box pos="sticky" zIndex={1} top={0}>
-        <NavBar />
-        <BottomNav />
+        <NavBar/>
+        <BottomNav/>
       </Box>
     </>
   );

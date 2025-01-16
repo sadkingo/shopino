@@ -5,11 +5,11 @@ import { Icon } from "@iconify/react";
 import Link from "next/link";
 import colors from "@/config/colors";
 // TODO Grab the menus form API
-const BottomNav = () => {
+const NavLinks = () => {
   return (
     <HStack
-      bg={{ _light: colors.mediumLight, _dark: colors.medium }}
-      mdDown={{ display: "none" }}
+      bg={{_light: colors.mediumLight, _dark: colors.medium}}
+      mdDown={{display: "none"}}
       p={1}
       borderBottomWidth={1}
       justifyContent="space-around"
@@ -18,9 +18,9 @@ const BottomNav = () => {
       <HStack gap={8}>
         <Menu
           title="Categories"
-          items={[{ id: 0, title: "All products", url: "/" }]}
+          items={[{id: 0, title: "All products", url: "/"}]}
         >
-          <Icon icon="ep:arrow-down" />
+          <Icon icon="ep:arrow-down"/>
         </Menu>
         <Link href="/about-us">About us</Link>
         <Link href="/contact-us">Contact Us</Link>
@@ -33,7 +33,7 @@ const BottomNav = () => {
               title: "Arabic",
               content: (
                 <HStack fontSize={16}>
-                  <Icon icon="twemoji:flag-algeria" />
+                  <Icon icon="twemoji:flag-algeria"/>
                   Arabic
                 </HStack>
               ),
@@ -41,7 +41,7 @@ const BottomNav = () => {
             },
           ]}
         >
-          <Icon icon="flag:us-4x3" /> English
+          <Icon icon="flag:us-4x3"/> English
         </Menu>
         <Link href="/about-us">Privacy Policy</Link>
         <Link href="/contact-us">Terms & Conditions</Link>
@@ -50,4 +50,4 @@ const BottomNav = () => {
   );
 };
 
-export default BottomNav;
+export default NavLinks;
