@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import DiscountItem from "./DiscountItem.component";
-import { DiscountItemProps } from "@components/DiscountItem/DiscountItem";
+import { DiscountItemProps } from "@components/discount-item/DiscountItem";
 
 const DiscountItemContainer: FC<DiscountItemProps> = ({image, coupon, date, ...restProps}) => {
     return (
