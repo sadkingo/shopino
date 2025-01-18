@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Flex, Grid, Text, VStack } from "@chakra-ui/react";
+import { Grid, Text, VStack } from "@chakra-ui/react";
 import FeaturedCategoryCard from "@components/featured-category-card";
 
 const FeaturedCategories: FC = () => {
