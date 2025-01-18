@@ -22,6 +22,7 @@ const FeaturedCategories: FC = () => {
       <Grid
         w="full"
         templateRows="auto"
+        justifyItems="center"
         templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
         gap={4}
       >
