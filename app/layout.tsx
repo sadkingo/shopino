@@ -31,6 +31,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         flex={1}>
         {children}
       </Box>
+      <Footer/>
     </Provider>
     </body>
     </html>
