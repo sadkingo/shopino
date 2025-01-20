@@ -105,16 +105,16 @@ const Footer = () => {
 
   function renderSocialMediaLinks() {
     return <Flex flexWrap="wrap">
-      <ChakraLink href={socialMediaLinks.facebook} target="_blank">
+      <ChakraLink _hover={{opacity: 0.75}} href={socialMediaLinks.facebook} target="_blank">
         <Icon width={60} height={60} icon="ic:baseline-facebook"/>
       </ChakraLink>
-      <ChakraLink href={socialMediaLinks.github} target="_blank">
+      <ChakraLink _hover={{opacity: 0.75}} href={socialMediaLinks.github} target="_blank">
         <Icon width={60} height={60} icon="mdi:github"/>
       </ChakraLink>
-      <ChakraLink href={socialMediaLinks.linkedin} target="_blank">
+      <ChakraLink _hover={{opacity: 0.75}} href={socialMediaLinks.linkedin} target="_blank">
         <Icon width={60} height={60} icon="entypo-social:linkedin-with-circle"/>
       </ChakraLink>
-      <ChakraLink href={socialMediaLinks.x} target="_blank">
+      <ChakraLink _hover={{opacity: 0.75}} href={socialMediaLinks.x} target="_blank">
         <Icon icon="pajamas:twitter" width="60" height="60"/>
       </ChakraLink>
     </Flex>;
