@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react';
 import { Icon } from '@iconify/react';
 import { siteConfig } from './Footer.config';
-import FooterSignup from '@components/email-news-signUp';
+import FooterSignup from '../email-news-signup';
 import { ExternalFooterLink, InternalFooterLink } from '@components/footer-links';
 
 const Footer = () => {
