@@ -13,7 +13,8 @@ import colors from "@/config/colors";
 import DiscountItem from "../components/discount-item";
 import { Alert } from "@ui/alert";
 import { themedColors } from "@/config/theme";
-import FeaturedCategories from "@components/featured-categories/FeaturedCategories.component";
+import FeaturedCategories from "@components/featured-categories";
+import PopularProducts from "@components/popular-products";
 
 export default function Home() {
   const date = new Date(2026, 2, 15, 3, 4, 5);
@@ -43,6 +44,7 @@ export default function Home() {
         </GridItem>
       </Grid>
       <FeaturedCategories/>
+      <PopularProducts/>
     </VStack>
   );
 
