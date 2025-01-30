@@ -6,15 +6,15 @@ import fruit2 from "@/public/images/fruit-2.png";
 import fruit3 from "@/public/images/fruit-3.png";
 import apple from "@/public/images/apple.png";
 
-import CarouselItem from "@/components/carousel-item";
-import Carousel from "@/components/carousel";
-import DiscountCard from "@/components/discount-card";
+import CarouselItem from "@/components/ui/carousel-item";
+import Carousel from "@components/ui/carousel";
+import DiscountCard from "@components/ui/discount-card";
 import colors from "@/config/colors";
-import DiscountItem from "../components/discount-item";
-import { Alert } from "@ui/alert";
+import DiscountItem from "@components/ui/discount-item";
+import { Alert } from "@components/chakra-ui/alert";
 import { themedColors } from "@/config/theme";
-import FeaturedCategories from "@components/featured-categories";
-import PopularProducts from "@components/popular-products";
+import FeaturedCategories from "@components/ui/featured-categories";
+import PopularProducts from "@components/ui/popular-products";
 
 export default function Home() {
   const date = new Date(2026, 2, 15, 3, 4, 5);
