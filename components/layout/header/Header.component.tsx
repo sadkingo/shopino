@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "../nav-bar";
-import BottomNav from "../nav-links";
+import BottomNav from "../../ui/nav-links";
 import ContactStrap from "../contact-strap";
 import { Box } from "@chakra-ui/react";
 

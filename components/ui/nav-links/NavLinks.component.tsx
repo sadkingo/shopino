@@ -1,6 +1,6 @@
 import { HStack } from "@chakra-ui/react";
 import React from "react";
-import Menu from "../menu";
+import Menu from "../../commen/menu";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import colors from "@/config/colors";

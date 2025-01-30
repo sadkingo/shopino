@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Badge, Flex, Text, VStack } from "@chakra-ui/react";
 import { colors } from "@/config/theme";
 import { DiscountItemProps } from "@components/discount-item/DiscountItem";
-import Timer from "@components/timer/Timer.container";
+import Timer from "@ui/timer/Timer.container";
 
 
 const DiscountItem: FC<DiscountItemProps> = ({image, date, coupon, ...restProps}) => {

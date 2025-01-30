@@ -1,5 +1,5 @@
 import { FC, useState, useEffect } from 'react';
-import { TimerProps } from "@components/timer/Timer";
+import { TimerProps } from "@ui/timer/Timer";
 import { StatRoot, StatValueText, StatValueUnit, Text } from "@chakra-ui/react";
 import { calculateTimeLeft } from "@/util/calculateTimeLeft";
 

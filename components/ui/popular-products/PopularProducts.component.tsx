@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Heading, Stack, Text } from "@chakra-ui/react";
-import ProductCard from "@components/product-card";
+import ProductCard from "@ui/product-card";
 
 const PopularProducts: FC = () => {
   return (

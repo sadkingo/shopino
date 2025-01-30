@@ -5,7 +5,7 @@ import {
   ExternalFooterLinkProps,
   ExternalSocialLinkProps,
   InternalFooterLinkProps,
-} from "@components/footer-links/FooterLinksType";
+} from "@ui/footer-links/FooterLinksType";
 import { iconProps } from "./FooterLinks.config"
 
 const ExternalFooterLink: FC<ExternalFooterLinkProps> = ({href, text, isExternal = true}) => {

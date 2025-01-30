@@ -1,4 +1,4 @@
-import { MenuType } from "../menu/Menu";
+import { MenuType } from "@components/commen/menu/Menu";
 
 const ProfileMenuItems: MenuType[] = [
   {

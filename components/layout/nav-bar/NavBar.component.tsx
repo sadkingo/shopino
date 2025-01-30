@@ -12,11 +12,11 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { LuSearch } from "react-icons/lu";
-import { InputGroup } from "@ui/input-group";
-import Menu from "@components/menu";
+import { InputGroup } from "@components/chakra-ui/input-group";
+import Menu from "../../commen/menu";
 
 import { NAVBAR_HIGHT, ProfileMenuItems } from "./NavBar.config";
-import { ColorModeButton } from "@ui/color-mode";
+import { ColorModeButton } from "@components/chakra-ui/color-mode";
 import {
   DrawerBackdrop,
   DrawerBody,
@@ -24,9 +24,9 @@ import {
   DrawerContent,
   DrawerRoot,
   DrawerTrigger,
-} from "@ui/drawer";
+} from "@components/chakra-ui/drawer";
 import colors from "@/config/colors";
-import CartDrawer from "@components/cart-drawer/CartDrawer.component";
+import CartDrawer from "@ui/cart-drawer/CartDrawer.component";
 
 function NavBarComponent() {
   return (
