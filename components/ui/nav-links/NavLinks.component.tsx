@@ -3,7 +3,7 @@ import React from "react";
 import Menu from "../../commen/menu";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
-import colors from "@/config/colors";
+import colors from "@/lib/theme-config/colors";
 // TODO Grab the menus form API
 const NavLinks = () => {
   return (
