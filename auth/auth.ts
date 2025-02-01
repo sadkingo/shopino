@@ -1,9 +1,9 @@
 import NextAuth from "next-auth"
 import Credentials from "next-auth/providers/credentials"
-import hashPassword from "@/util/hashPassword";
+import hashPassword from "@/lib/util/hashPassword";
 import { prisma } from "@/prisma/client";
 import { User } from "@prisma/client"
-import { loginSchema } from "@/schema/loginSchema";
+import { loginSchema } from "@/lib/schema/loginSchema";
 
 export const {handlers, signIn, signOut, auth} = NextAuth({
   providers: [
