@@ -47,8 +47,6 @@ const handleAxiosError = (error: AxiosError) => {
 
     showErrorToast("Error", "An unexpected error occurred.");
   }
-
-  console.error("Axios Error:", error);
 };
 
 export { handleAxiosError };
