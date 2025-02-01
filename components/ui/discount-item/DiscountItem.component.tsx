@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Image from "next/image";
 import { Badge, Flex, Text, VStack } from "@chakra-ui/react";
-import { colors } from "@/config/theme";
+import { colors } from "@/lib/theme-config/theme";
 import { DiscountItemProps } from "@components/discount-item/DiscountItem";
 import Timer from "@ui/timer/Timer.container";
 
