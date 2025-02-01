@@ -2,7 +2,7 @@ import { Center, ClipboardRoot, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 import { ClipboardLink } from "@components/chakra-ui/clipboard";
 import { Icon } from "@iconify/react";
-import colors from "@/config/colors";
+import colors from "@/lib/theme-config/colors";
 
 const ContactStrap = () => {
   const phoneNumber = "(555-555-555)";
