@@ -37,6 +37,7 @@ function NavBarComponent() {
       justifyContent="space-between"
       bg="Background"
       color="fg"
+      shadow={{_dark: "0 1px 3px white", base: "0 1px 3px black"}}
     >
       {renderDesktopMenu()}
       {renderMobileMenu()}
