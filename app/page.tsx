@@ -9,10 +9,10 @@ import apple from "@/public/images/apple.png";
 import CarouselItem from "@/components/ui/carousel-item";
 import Carousel from "@components/ui/carousel";
 import DiscountCard from "@components/ui/discount-card";
-import colors from "@/config/colors";
+import colors from "@/lib/theme-config/colors";
 import DiscountItem from "@components/ui/discount-item";
 import { Alert } from "@components/chakra-ui/alert";
-import { themedColors } from "@/config/theme";
+import { themedColors } from "@/lib/theme-config/theme";
 import FeaturedCategories from "@components/ui/featured-categories";
 import PopularProducts from "@components/ui/popular-products";
 
