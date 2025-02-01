@@ -5,7 +5,7 @@ import {
   CardBody,
   CardFooter,
   CardRoot,
-  CardTitle, Flex, Image,
+  CardTitle, Flex,
   StatLabel,
   StatRoot,
   StatValueText, Text,
