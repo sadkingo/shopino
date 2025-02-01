@@ -1,4 +1,4 @@
-import colors from "@/config/colors";
+import colors from "@/lib/theme-config/colors";
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import React, { FC } from "react";
