@@ -1,7 +1,7 @@
 import { FC, useState, useEffect } from 'react';
 import { TimerProps } from "@ui/timer/Timer";
 import { StatRoot, StatValueText, StatValueUnit, Text } from "@chakra-ui/react";
-import { calculateTimeLeft } from "@/util/calculateTimeLeft";
+import { calculateTimeLeft } from "@/lib/util/calculateTimeLeft";
 
 const Timer: FC<TimerProps> = ({date}) => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft((date)))
