@@ -25,7 +25,7 @@ import {
   DrawerRoot,
   DrawerTrigger,
 } from "@components/chakra-ui/drawer";
-import colors from "@/config/colors";
+import colors from "@/lib/theme-config/colors";
 import CartDrawer from "@ui/cart-drawer/CartDrawer.component";
 
 function NavBarComponent() {
