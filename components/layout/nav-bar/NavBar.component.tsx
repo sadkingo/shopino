@@ -4,8 +4,6 @@ import Link from "next/link";
 import {
   Box,
   Button,
-  Circle,
-  Float,
   HStack,
   Input,
   Text,
@@ -74,14 +72,6 @@ function NavBarComponent() {
             <Icon className="h-full w-full" icon="ic:outline-share"/>
           </Button>
           <CartDrawer/>
-          {/*<Button p="2">*/}
-          {/*  <Icon className="h-full w-full" icon="iconoir:cart"/>*/}
-          {/*  <Float offset="2">*/}
-          {/*    <Circle size="5" bg="red" color="white">*/}
-          {/*      <Text fontSize="12px">0</Text>*/}
-          {/*    </Circle>*/}
-          {/*  </Float>*/}
-          {/*</Button>*/}
           <Menu items={ProfileMenuItems}>
             <Icon className="h-full w-full" icon="mdi:user"/>
           </Menu>
@@ -140,15 +130,17 @@ function NavBarComponent() {
     function mobileMenuButton(text: string, href: string) {
       return (
         <Link href={href} className="w-full">
-          <Button
-            w="full"
-            borderRadius="none"
-            bg={colors.medium}
-            color="white"
-            opacity={{_hover: "80%"}}
-          >
-            {text}
-          </Button>
+          <DrawerTrigger asChild>
+            <Button
+              w="full"
+              borderRadius="none"
+              bg={colors.medium}
+              color="white"
+              opacity={{_hover: "80%"}}
+            >
+              {text}
+            </Button>
+          </DrawerTrigger>
         </Link>
       );
     }
